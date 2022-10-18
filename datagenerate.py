@@ -10,7 +10,7 @@ file.writelines(newrecord)
 ls_name = ['Lana', 'Dima', 'Anna', 'Natasha', 'Pasha', 'Denis', 'Kate', 'Sonya', 'Roma', 'Igor', 'Lina']
 ls_surname = ['Petrenko', 'Ivanov', 'Nebozenko', 'Kaleeva', 'Zinchenko', 'Kushnir', 'Krasota', 'Usenko', 'Morozov', 'Fomenko', 'Vitek']
 ls_e_mail = ['11111@gmail.com', '2222222@yandex.ru', '333333@mail.ru', '44444444@gmail.com', '5555555@gmail.com', '666666666@mail.ru', '77777777@mail.ru', '88888888@mail.ru', '99999999@yandex.ru']
-ls_position = ['teacher of math', 'teacher of history', 'English teacher', 'Spanish teacher', 'German teacher', 'Methodist']
+ls_position = ['teacher of math', 'teacher of history', 'english teacher', 'spanish teacher', 'german teacher', 'methodist']
 
 
 def list_of_numbers():

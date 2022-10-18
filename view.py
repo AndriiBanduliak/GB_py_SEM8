@@ -1,3 +1,4 @@
+from time import time
 import adding as add
 import logger as lg
 
@@ -19,41 +20,61 @@ def ls_menu():
 
         if n == 1:
             lg.logging.info('The user has selected item number 1')
-            print(*add.retrive(), sep='\n')
+            base = add.retrive()
+            for lines in base:
+                for line in lines:
+                    print(line, end=' ')
+                print()
+           # print(*add.retrive(), sep='\n')
 
         elif n == 2:
             lg.logging.info('The user has selected item number 2')
             search = input('Введите фамилию: ')
-            lg.logging.info('User entered: {search}')
-            print(*add.retrive(surname=search), sep='\n')
+            lg.logging.info(f'User entered: {search}')
+            base = add.retrive(surname=search)
+            for lines in base:
+                for line in lines:
+                    print(line, end=' ')
+                print()
+            # print(*add.retrive(surname=search), sep='\n')
 
     
         elif n == 3:
             lg.logging.info('The user has selected item number 3')
-            search = input('Введите должность: ')
-            lg.logging.info('User entered: {search}')
-            print(*add.retrive(position=search), sep='\n')
+            search = input('Введите должность: ').lower()
+            lg.logging.info(f'User entered: {search}')
+            base = add.retrive(position=search)
+            for lines in base:
+                for line in lines:
+                    print(line, end=' ')
+                print()
+            # print(*add.retrive(position=search), sep='\n')
 
         elif n == 4:
             lg.logging.info('The user has selected item number 4')
             search = input('Введите минимальную заработную плату: ')
-            lg.logging.info('User entered: {search}')
-            print(*add.retrive(salary=search), sep='\n')
+            lg.logging.info(f'User entered: {search}')
+            base = add.retrive(salary=search)
+            for lines in base:
+                for line in lines:
+                    print(line, end=' ')
+                print()
+            # print(*add.retrive(salary=search), sep='\n')
 
         elif n == 5:
             lg.logging.info('The user has selected item number 5')
             name = input('Введите имя: ')
-            lg.logging.info('User entered: {name}')
+            lg.logging.info(f'User entered: {name}')
             surname = input('Введите фамилию: ')
-            lg.logging.info('User entered: {surname}')
+            lg.logging.info(f'User entered: {surname}')
             number = input('Введите номер телефона: ')
-            lg.logging.info('User entered: {number}')
+            lg.logging.info(f'User entered: {number}')
             email = input('Введите электронную почту: ')
-            lg.logging.info('User entered: {email}')
+            lg.logging.info(f'User entered: {email}')
             salary = input('Введите зарплату: ')
-            lg.logging.info('User entered: {salary}')
+            lg.logging.info(f'User entered: {salary}')
             position = input('Введите занимаемую должность: ')
-            lg.logging.info('User entered: {position}')
+            lg.logging.info(f'User entered: {position}')
             add.create(name, surname, number, email, salary, position)
 
         elif n == 6:
@@ -65,31 +86,39 @@ def ls_menu():
             if change == 1:
                 lg.logging.info('The user has selected item number 6.1')
                 search = input('Введите фамилию: ')
-                lg.logging.info('User entered: {search}')
-                add.retrive(surname=search)
-                print(*add.retrive(surname=search), sep='\n')
+                lg.logging.info(f'User entered: {search}')
+                base = add.retrive(surname=search)
+                for lines in base:
+                    for line in lines:
+                        print(line, end=' ')
+                    print()
+                # print(*add.retrive(surname=search), sep='\n')
                 user_id = input('Введите id записи: ')
-                lg.logging.info('User entered: {user_id}')
+                lg.logging.info(f'User entered: {user_id}')
                 new_position = input('Введите новую должность: ')
-                lg.logging.info('User entered: {new_position}')
+                lg.logging.info(f'User entered: {new_position}')
                 add.update(id=user_id, new_position=new_position)
                 new_salary = input('Введите новую заработную плату: ')
-                lg.logging.info('User entered: {new_salary}')
+                lg.logging.info(f'User entered: {new_salary}')
                 add.update(id=user_id, new_salary=new_salary)
 
             elif change == 2:
                 lg.logging.info('The user has selected item number 6.2')
                 search = input('Введите должность: ')
-                lg.logging.info('User entered: {search}')
-                add.retrive(position=search)
-                print(*add.retrive(position=search), sep='\n')
+                lg.logging.info(f'User entered: {search}')
+                base = add.retrive(position=search)
+                for lines in base:
+                    for line in lines:
+                        print(line, end=' ')
+                    print()
+                # print(*add.retrive(position=search), sep='\n')
                 user_id = input('Введите id записи: ')
-                lg.logging.info('User entered: {user_id}')
+                lg.logging.info(f'User entered: {user_id}')
                 new_position = input('Введите новую должность: ')
-                lg.logging.info('User entered: {new_position}')
+                lg.logging.info(f'User entered: {new_position}')
                 add.update(id=user_id, new_position=new_position)
                 new_salary = input('Введите новую заработную плату: ')
-                lg.logging.info('User entered: {new_salary}')
+                lg.logging.info(f'User entered: {new_salary}')
                 add.update(id=user_id, new_salary=new_salary)
 
             else:
@@ -106,19 +135,29 @@ def ls_menu():
             if deleting == 1:
                 lg.logging.info('The user has selected item number 7.1')
                 search = input('Введите фамилию: ')
-                lg.logging.info('User entered: {search}')
-                print(*add.retrive(surname=search), sep='\n')
+                lg.logging.info(f'User entered: {search}')
+                base = add.retrive(surname=search)
+                for lines in base:
+                    for line in lines:
+                        print(line, end=' ')
+                    print()
+                # print(*add.retrive(surname=search), sep='\n')
                 user_id = input('Введите id записи: ')
-                lg.logging.info('User entered: {user_id}')
+                lg.logging.info(f'User entered: {user_id}')
                 add.delete(id=user_id)
 
             elif deleting == 2:
                 lg.logging.info('The user has selected item number 7.2')
                 search = input('Введите должность: ')
-                lg.logging.info('User entered: {search}')
-                print(*add.retrive(position=search), sep='\n')
+                lg.logging.info(f'User entered: {search}')
+                base = add.retrive(position=search)
+                for lines in base:
+                    for line in lines:
+                        print(line, end=' ')
+                    print()
+                # print(*add.retrive(position=search), sep='\n')
                 user_id = input('Введите id записи: ')
-                lg.logging.info('User entered: {user_id}')
+                lg.logging.info(f'User entered: {user_id}')
                 add.delete(id=user_id)
 
             else:
@@ -139,7 +178,7 @@ def ls_menu():
 
 def сheck_number(arg):
     while arg.isdigit() != True:
-        lg.logging.warning('User entered an invalid menu value: {arg}')
+        lg.logging.warning(f'User entered an invalid menu value: {arg}')
         print('\nОшибка. Вы ввели не число.')
         arg = input('Введите соответствующий пункт меню: ')
     return int(arg)

@@ -80,9 +80,9 @@ def retrive(id='', name='', surname='', number='', email='', salary='', position
             continue
         if(email != '' and row[4] != email.lower()):
             continue
-        if(salary != '' and row[5] != salary):
+        if(salary != '' and int(row[5]) < int(salary)):
             continue
-        if(position != '' and row[6] != position.lower()):
+        if(position != '' and row[6] != position):
             continue
         result.append(row)
     if len(result) == 0:
